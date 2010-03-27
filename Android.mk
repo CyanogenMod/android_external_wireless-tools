@@ -51,5 +51,12 @@ $(SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf $(IW_BINARY) $@
 
+ALL_DEFAULT_INSTALLED_MODULES += $(SYMLINKS)
+
+# We need this so that the installed files could be picked up based on the
+# local module name
+ALL_MODULES.$(LOCAL_MODULE).INSTALLED := \
+    $(ALL_MODULES.$(LOCAL_MODULE).INSTALLED) $(SYMLINKS)
+
 endif
 endif
