@@ -21,6 +21,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 IW_TOOLS := \
+		iwconfig \
 		iwlist \
 		iwpriv \
 		iwspy \
